@@ -5,6 +5,7 @@ import (
 
 	"github.com/WeixinCloud/wxcloudrun-wxcomponent/api/admin"
 	"github.com/WeixinCloud/wxcloudrun-wxcomponent/api/authpage"
+	"github.com/WeixinCloud/wxcloudrun-wxcomponent/api/custom"
 	"github.com/WeixinCloud/wxcloudrun-wxcomponent/api/innerservice"
 	"github.com/WeixinCloud/wxcloudrun-wxcomponent/api/proxy"
 	"github.com/WeixinCloud/wxcloudrun-wxcomponent/api/wxcallback"
@@ -30,7 +31,7 @@ func Init() *gin.Engine {
 	wxcallback.Routers(r)
 
 	// 微管家
-	Include(admin.Routers, authpage.Routers)
+	Include(admin.Routers, authpage.Routers, custom.Routers)
 	g := r.Group("/wxcomponent")
 	for _, opt := range options {
 		opt(g)

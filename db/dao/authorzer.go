@@ -91,3 +91,14 @@ func GetDevWeAppRecords(offset int, limit int, appid string) ([]*model.Authorize
 	result = result.Count(&count).Offset(offset).Limit(limit).Find(&records)
 	return records, count, result.Error
 }
+
+// GetAppletList 获取小程序列表
+func GetAppletList(offset int, limit int) ([]*model.Authorizer, int64, error) {
+	var records = []*model.Authorizer{}
+	cli := db.Get()
+	result := cli.Table(authorizerTableName)
+
+	var count int64
+	result = result.Count(&count).Offset(offset).Limit(limit).Find(&records)
+	return records, count, result.Error
+}
