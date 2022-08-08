@@ -122,6 +122,11 @@ export default function extended() {
         setShowRuleModal(false)
     }
 
+    useEffect(() => {
+        handleAuthorList()
+        getTableData()
+    },[])
+
     //getAuthorListRequest
     const handleAuthorList = async () => {
         setIsTableLoading(true)
