@@ -209,12 +209,6 @@ export default function extended() {
 
     return (
         <div>
-            <p className="text">环境</p>
-            <div className="normal_flex">
-                <div className="blue_circle" />
-                <p className="desc"
-                   style={{margin: 0}}>环境列表</p>
-            </div>
             <Tabs value={selectedTab} placement={'top'} size="medium" theme="normal"
                   onChange={val => setSelectedTab(val)}>
                 <TabPanel value={tabs[0].value} label={tabs[0].label}>
