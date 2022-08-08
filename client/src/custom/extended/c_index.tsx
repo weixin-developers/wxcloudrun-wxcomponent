@@ -170,7 +170,8 @@ export default function extended() {
         const resp = await request({
             request: getShareCloudbaseEnvRequest,
             data: {
-                appids: ["wxad2ee6fa2df2c46d"],
+                //appids: ["wxad2ee6fa2df2c46d"],
+                appids: [normalData[index].appid],
             }
         })
         if (resp.code === 0) {
